@@ -1,6 +1,7 @@
 from distutils.core import setup
 setup(
     name = 'gd-api',
+    package_dir={'': 'C:\/Users/user/documents/githubsite'}, 
     packages = ['gd-api'],
     version = '0.2',
     license='MIT',
@@ -21,6 +22,6 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.8'
     ],
 )
