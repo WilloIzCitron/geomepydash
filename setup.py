@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
     name = 'gd-api',
     packages = ['gd-api'],
-    version = '0.1',
+    version = '0.2',
     license='MIT',
     description = 'Simple python wrapper for Geometry Dash API and some GD Tools (Originally made by GD Colon)',   # Give a short description about your library
     author = 'vierofernando',
     author_email = 'vierofernando9@gmail.com',
     url = 'https://github.com/vierofernando/gd-api',
-    download_url = 'https://github.com/vierofernando/gd-api/archive/0.1.tar.gz',
+    download_url = 'https://github.com/vierofernando/gd-api/archive/0.2.tar.gz',
     keywords = ['API', 'WRAPPER', 'GAMES', 'GD'],
     install_requires=[
         'urllib3'
