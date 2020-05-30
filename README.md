@@ -13,7 +13,18 @@ to import all of the modules from the package.
 
 **Example: Fetch the current GD Daily level**
 _All data are returned in a **class.**_
-```import gd
+```
+import gd
 level = gd.daily()
 print(level.name)
-# returns the current daily level name```
+# returns the current daily level name
+
+mytextbox = gd.textbox(
+  text = 'I love geometry dash!',
+  name = 'My cute monster',
+  color = 'blue',
+  char = gd.Characters.Scratch()
+)
+print(mytextbox)
+# returns the link to the image.
+```
