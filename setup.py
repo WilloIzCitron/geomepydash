@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
     name = 'gd-api',
-    packages = ['gd=api'],
+    packages = ['gd-api'],
     version = '0.1',
     license='MIT',
     description = 'Simple python wrapper for Geometry Dash API and some GD Tools (Originally made by GD Colon)',   # Give a short description about your library
