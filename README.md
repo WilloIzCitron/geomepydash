@@ -26,7 +26,7 @@ mytextbox = gd.textbox(
   text = 'I love geometry dash!',
   name = 'My cute monster',
   color = 'blue',
-  char = gd.Characters.Scratch()
+  char = gd.Characters.Scratch(expression='talk')
 )
 print(mytextbox)
 # returns the link to the image.
