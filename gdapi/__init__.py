@@ -1,9 +1,8 @@
 """
-Geometry Dash API Wrapper
+geomepydash: Geometry Dash API Wrapper
 -----------------
-A basic wrapper for the Discord API.
-:copyright: (c) 2015-2020 Rapptz
-:license: MIT, see LICENSE for more details.
+A python wrapper for GDBrowser API and GD Tools.
+(c) 2020 vierofernando
 """
 
 __title__ = 'geomepydash'
