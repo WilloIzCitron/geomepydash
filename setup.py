@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
     name = 'geomepydash',
     package_dir={'': 'C:\/Users/user/documents/githubsite'}, 
-    packages=['gd', 'characters', 'classes'],
+    packages=['gd.api', 'gd.characters', 'gd.classes'],
     version = '0.2.4',
     license='MIT',
     description = 'Simple python wrapper for Geometry Dash API and some GD Tools (Originally made by GD Colon)',   # Give a short description about your library
