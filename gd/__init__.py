@@ -10,7 +10,7 @@ __title__ = 'gd'
 __author__ = 'vierofernando'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2020 vierofernando'
-__version__ = '0.2.7b'
+__version__ = '0.2.9'
 
 def classify(obj):
     total = 'class Level:\n\t'
@@ -28,9 +28,66 @@ def GDClass(obj):
 
 from urllib.request import urlopen as fetchapi
 import json
-import characters
-from .characters import *
 
+class Characters:
+    def Gatekeeper(expression):
+        if expression=='dark':
+            return '&char=gatekeeper.dark'
+        else:
+            return '&char=gatekeeper'
+    def Keymaster(expression):
+        if expression=='huh':
+            return '&char=keymaster.huh'
+        elif expression=='scared':
+            return '&char=keymaster.scared'
+        elif expression=='scream':
+            return '&char=keymaster.scream'
+        else:
+            return '&char=keymaster' 
+    def Monster(expression):
+        if expression=='eyes':
+            return '&char=monster.eyes'
+        else:
+            return '&char=monster'
+    def Potbor(expression):
+        if expression=='annoyed':
+            return '&char=potbor.'+str(expression)
+        elif expression=='huh':
+            return '&char=potbor.'+str(expression)
+        elif expression=='mad':
+            return '&char=potbor.'+str(expression)
+        elif expression=='right':
+            return '&char=potbor.'+str(expression)
+        elif expression=='talk':
+            return '&char=potbor.'+str(expression)
+        elif expression=='tired':
+            return '&char=potbor.'+str(expression)
+        else:
+            return '&char=potbor'
+    def Scratch(expression):
+        if expression=='annoyed':
+            return '&char=scratch.'+str(expression)
+        elif expression=='huh':
+            return '&char=scratch.'+str(expression)
+        elif expression=='mad':
+            return '&char=scratch.'+str(expression)
+        elif expression=='right':
+            return '&char=scratch.'+str(expression)
+        elif expression=='talk':
+            return '&char=scratch.'+str(expression)
+        elif expression=='tired':
+            return '&char=scratch.'+str(expression)
+        else:
+            return '&char=scratch'
+    def Shopkeeper(expression):
+        if expression=='annoyed':
+            return '&char=shopkeeper.annoyed'
+        else:
+            return '&char=shopkeeper'
+    def Spooky():
+        return '&char=spooky'
+    def Custom(link):
+        return '&url='+str(link)+'&resize=1'
 def daily():
     data = json.loads(fetchapi('https://gdbrowser.com/api/level/daily').read())
     total = {}
@@ -151,6 +208,4 @@ def textbox(text, name, color, char, *args, **kwargs):
         mobile = '&oldfont'
     if kwargs.get('color', None)==None:
         color = ''
-    if color not in ['blue', 'brown', 'purple']:
-        raise IndexError('Invali color. Please try blue, brown, or purple')
     return 'https://gdcolon.com/tools/gdtextbox/img/'+str(text)+'?name='+str(name)+str(color)+str(char)
