@@ -8,12 +8,15 @@ To install the package, type the following on your console.
 
 # documentation
 Open your code, and type:
-```import gd```
+```py
+import gd
+```
 to import all of the modules from the package.
 
-**Example: Fetch the current GD Daily level**
-_All data are returned in a **class.**_
-```
+**Examples**
+
+_All data (except GD Tools) are returned in a **class.**_
+```py
 import gd
 level = gd.daily()
 print(level.name)
