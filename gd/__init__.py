@@ -10,7 +10,7 @@ __title__ = 'gd'
 __author__ = 'vierofernando'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2020 vierofernando'
-__version__ = '0.2.6'
+__version__ = '0.2.7'
 
 def classify(obj):
     total = 'class Level:\n\t'
