@@ -28,7 +28,8 @@ def GDClass(obj):
 
 from urllib.request import urlopen as fetchapi
 import json
-from .characters import Characters
+import characters
+from .characters import *
 
 def daily():
     data = json.loads(fetchapi('https://gdbrowser.com/api/level/daily').read())
