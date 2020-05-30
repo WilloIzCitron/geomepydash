@@ -1,3 +1,7 @@
+DISCLAIMER:
+Original API and GD Tools were made by GD Colon.
+Everything else (the games, characters, etc.) belongs to RobTop Games.
+
 MIT License
 Copyright (c) 2020 VIEROFERNANDO
 Permission is hereby granted, free of charge, to any person obtaining a copy
