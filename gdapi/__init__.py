@@ -11,3 +11,9 @@ __author__ = 'vierofernando'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2020 vierofernando'
 __version__ = '0.2.3'
+
+from urllib.request import urlopen as fetchapi
+import json
+import characters
+import gd
+import classes
