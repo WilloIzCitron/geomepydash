@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
     name = 'geomepydash',
-    package_dir={'': 'C:\/Users/user/documents/githubsite'}, 
+    package_dir={'': 'C:\/Users/user/documents/githubsite/geomepydash'}, 
     packages=['gd', 'gd.api', 'gd.characters', 'gd.classes'],
     version = '0.2.4',
     license='MIT',
