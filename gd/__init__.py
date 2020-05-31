@@ -10,7 +10,7 @@ __title__ = 'gd'
 __author__ = 'vierofernando'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2020 vierofernando'
-__version__ = '0.3'
+__version__ = '0.3.1'
 
 def classify(obj):
     total = 'class Level:\n\t'
@@ -186,7 +186,7 @@ def comment(text, author, *args, **kwargs):
     likes = '&likes='+str(kwargs.get('likes', None))
     color = '&color='+str(kwargs.get('color', None))
     if kwargs.get('likes', None)==None:
-        likes = ''
+        likes = '&likes=0'
     if kwargs.get('color', None)==None:
         color = ''
     mod = '&mod='+str(kwargs.get('mod', None))

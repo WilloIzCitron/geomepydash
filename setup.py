@@ -1,10 +1,10 @@
-from distutils.core import setup
+from setuptools import setup
 f = open("README.md", "r")
 setup(
     name = 'geomepydash',
     package_dir={'': 'C:\/Users/user/documents/githubsite/geomepydash'}, 
     packages=['gd'],
-    version = '0.3',
+    version = '0.3.1',
     license='MIT',
     description = 'Simple python wrapper for Geometry Dash API and some GD Tools (Originally made by GD Colon)',   # Give a short description about your library
     long_description=f.read(),
