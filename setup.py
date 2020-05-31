@@ -12,7 +12,7 @@ setup(
     author = 'vierofernando',
     author_email = 'vierofernando9@gmail.com',
     url = 'https://github.com/vierofernando/geomepydash',
-    download_url = 'https://github.com/vierofernando/geomepydash/archive/0.3.tar.gz',
+    download_url = 'https://github.com/vierofernando/geomepydash/archive/0.3.1.tar.gz',
     keywords = ['API', 'WRAPPER', 'GAMES', 'GD'],
     install_requires=[
         'urllib3'
