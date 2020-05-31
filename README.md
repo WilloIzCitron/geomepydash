@@ -1,12 +1,21 @@
-# gd-api
+# geomepydash
 Python wrapper for the GDBrowser API, and other GD tools as well (Original API by GD Colon)
 [Original GD API Documentation here](https://gdbrowser.com/api) | [Geometry Dash Tools](https://gdcolon.com/tools) 
 
 # setup
 To install the package, type the following on your console.
-```pip install geomepydash```
+
+```
+# Bash Terminal
+$ python3 -m pip install -U geomepydash
+
+# Windows Command Prompt
+py -3 -m pip install -U geomepydash
+```
 
 # documentation
+**[FULL DOCUMENTATION HERE](https://vierofernando.github.io/geomepydash)**
+
 Open your code, and type:
 ```py
 import gd
