@@ -28,6 +28,32 @@
             ]
         },
         {
+            "src":"gd.Leaderboard.topPlayers({parameters})",
+            "name":"topPlayers",
+            "usage":"Gets the current Top players in Geometry Dash.",
+            "format":"list <class>",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"count",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.Leaderboard.topCreators({parameters})",
+            "name":"topCreators",
+            "usage":"Gets the current Top creators in Geometry Dash.",
+            "format":"list <class>",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"count",
+                    "required":true
+                }
+            ]
+        },
+        {
             "src":"gd.comment({parameters})",
             "name":"comment",
             "usage":"Generates a GD Comment.",
