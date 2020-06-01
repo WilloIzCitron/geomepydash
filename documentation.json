@@ -15,21 +15,8 @@
             "parameters":[]
         },
         {
-            "src":"gd.Comment.getFromLevel({parameters})",
-            "name":"Comment.getFromLevel",
-            "usage":"Retrieves comments from a GD level.",
-            "format":"list of classes",
-            "parameters":[
-                {
-                    "type":"int",
-                    "name":"Level ID",
-                    "required":true
-                }
-            ]
-        },
-        {
-            "src":"gd.Icon({parameters})",
-            "name":"Icon",
+            "src":"gd.icon({parameters})",
+            "name":"icon",
             "usage":"Gets an icon of a user.",
             "format":"link (str)",
             "parameters":[
@@ -47,6 +34,19 @@
                     "type":"str",
                     "name":"size",
                     "required":false
+                }
+            ]
+        },
+        {
+            "src":"gd.Comment.getFromLevel({parameters})",
+            "name":"Comment.getFromLevel",
+            "usage":"Retrieves comments from a GD level.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"Level ID",
+                    "required":true
                 }
             ]
         },
