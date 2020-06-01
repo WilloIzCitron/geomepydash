@@ -10,7 +10,7 @@ __title__ = 'gd'
 __author__ = 'vierofernando'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2020 vierofernando'
-__version__ = '0.3.4'
+__version__ = '0.3.5'
 
 def classify(obj):
     total = 'class Level:\n\t'
@@ -209,6 +209,19 @@ def analyze(levelid):
         data = json.loads(fetchapi('https://gdbrowser.com/api/analyze/'+str(levelid)).read())
         total = GDClass(data)
         return total
+
+def icon(name, *args, **kwargs):
+    form = '&form='+str(kwargs.get('form', None))
+    size = '&size='+str(kwargs.get('size', None))
+    if size==None:
+        size = ''
+    else:
+        if str(size).isnumeric()==False:
+            raise ValueError('Size must be a number')
+    if form==None:
+        form = ''
+    return 'https://gdbrowser.com/icon/'+str(name)+str(form)+str(size)
+    
 
 def logo(text):
     return 'https://gdcolon.com/tools/gdlogo/img/'+str(text).replace(' ', '%20')

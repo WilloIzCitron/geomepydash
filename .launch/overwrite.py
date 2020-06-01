@@ -19,4 +19,4 @@ old_time = old_data[2].split('**LAST UPDATE TIME: "')[1].split('"')[0]
 
 for i in range(0, len(old_data)):
     print("OVERWRITING FILE(S)...")
-    overwrite(fileNames[i], old_data[i].replace(old_version, newver).replace(old_time, str(clock.datetime.now())[:-7]+' UTC'))
+    overwrite(fileNames[i], old_data[i].replace(old_version, newver).replace(old_time, str(clock.datetime.now())[:-7]+' (UTC+7)'))

@@ -28,6 +28,29 @@
             ]
         },
         {
+            "src":"gd.Icon({parameters})",
+            "name":"Icon",
+            "usage":"Gets an icon of a user.",
+            "format":"link (str)",
+            "parameters":[
+                {
+                    "type":"str",
+                    "name":"name",
+                    "required":true
+                },
+                {
+                    "type":"str",
+                    "name":"form",
+                    "required":false
+                },
+                {
+                    "type":"str",
+                    "name":"size",
+                    "required":false
+                }
+            ]
+        },
+        {
             "src":"gd.Comment.getFromUser({parameters})",
             "name":"Comment.getFromUser",
             "usage":"Retrieves comments filtered made by a user.",
