@@ -5,8 +5,8 @@ Links to the original website:
 \>\>\> [Original GD API Documentation here](https://gdbrowser.com/api)
 \>\>\> [Geometry Dash Tools](https://gdcolon.com/tools) 
 
-**VERSION: 0.3.2**
-**LAST UPDATE TIME: "01/06/2020 17.22 UTC"**
+**VERSION: 0.3.3**
+**LAST UPDATE TIME: "2020-06-01 17:34:44 UTC"**
 
 # setup
 To install the package, type the following on your console.
