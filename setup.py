@@ -4,7 +4,7 @@ setup(
     name = 'geomepydash',
     package_dir={'': 'C:\/Users/user/documents/githubsite/geomepydash'}, 
     packages=['gd'],
-    version = '0.3.3',
+    version = '0.3.4',
     license='MIT',
     description = 'Simple python wrapper for Geometry Dash API and some GD Tools (Originally made by GD Colon)',   # Give a short description about your library
     long_description=f.read(),
@@ -12,7 +12,7 @@ setup(
     author = 'vierofernando',
     author_email = 'vierofernando9@gmail.com',
     url = 'https://github.com/vierofernando/geomepydash',
-    download_url = 'https://github.com/vierofernando/geomepydash/archive/0.3.3.tar.gz',
+    download_url = 'https://github.com/vierofernando/geomepydash/archive/0.3.4.tar.gz',
     keywords = ['API', 'WRAPPER', 'GAMES', 'GD'],
     install_requires=[
         'urllib3'

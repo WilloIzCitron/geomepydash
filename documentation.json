@@ -15,6 +15,45 @@
             "parameters":[]
         },
         {
+            "src":"gd.Comment.getFromLevel({parameters})",
+            "name":"Comment.getFromLevel",
+            "usage":"Retrieves comments from a GD level.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"Level ID",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.Comment.getFromUser({parameters})",
+            "name":"Comment.getFromUser",
+            "usage":"Retrieves comments filtered made by a user.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"User ID",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.Comment.getProfilePosts({parameters})",
+            "name":"Comment.getProfilePosts",
+            "usage":"Retrieves posts from a GD user.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"User ID",
+                    "required":true
+                }
+            ]
+        },
+        {
             "src":"gd.analyze({parameters})",
             "name":"analyze",
             "usage":"Analyzes a level.",

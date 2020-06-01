@@ -2,11 +2,14 @@
 Python wrapper for the GDBrowser API, and other GD tools as well (Original API by GD Colon)
 
 Links to the original website:
+
 \>\>\> [Original GD API Documentation here](https://gdbrowser.com/api)
+
 \>\>\> [Geometry Dash Tools](https://gdcolon.com/tools) 
 
-**VERSION: 0.3.3**
-**LAST UPDATE TIME: "2020-06-01 17:34:44 UTC"**
+**VERSION: 0.3.4**
+
+**LAST UPDATE TIME: "2020-06-01 17:43:28 UTC"**
 
 # setup
 To install the package, type the following on your console.
