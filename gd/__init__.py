@@ -28,6 +28,8 @@ def GDClass(obj):
 
 from urllib.request import urlopen as fetchapi
 import json
+import requests
+import time
 
 class Characters:
     def Gatekeeper(expression):
@@ -88,6 +90,7 @@ class Characters:
         return '&char=spooky'
     def Custom(link):
         return '&url='+str(link)+'&resize=1'
+
 def daily():
     data = json.loads(fetchapi('https://gdbrowser.com/api/level/daily').read())
     total = {}

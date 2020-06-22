@@ -2,7 +2,6 @@ from setuptools import setup
 f = open("./README.md", "r")
 setup(
     name = 'geomepydash',
-    package_dir={'': 'C:\/Users/user/documents/githubsite/geomepydash'}, 
     packages=['gd'],
     version = '0.3.5',
     license='MIT',
@@ -15,7 +14,8 @@ setup(
     download_url = 'https://github.com/vierofernando/geomepydash/archive/0.3.5.tar.gz',
     keywords = ['API', 'WRAPPER', 'GAMES', 'GD'],
     install_requires=[
-        'urllib3'
+        'urllib3',
+        'requests'
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
