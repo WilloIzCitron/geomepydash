@@ -9,7 +9,7 @@ Links to the original website:
 
 **VERSION: 0.3.7**
 
-**LAST UPDATE TIME: "2020-06-23 22:07:03 (UTC+7)"**
+**LAST UPDATE TIME: "2020-06-23 22:21:54 (UTC+7)"**
 
 # setup
 To install the package, type the following on your console.
