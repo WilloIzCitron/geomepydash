@@ -10,7 +10,7 @@ __title__ = 'gd'
 __author__ = 'vierofernando'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2020 vierofernando'
-__version__ = '0.3.6'
+__version__ = '0.3.7'
 
 def classify(obj):
     total = 'class Level:\n\t'
@@ -26,70 +26,16 @@ def GDClass(obj):
         exec(toexe)
     return Result
 
+# EXTERNAL MODULES
 from urllib.request import urlopen as fetchapi
+from urllib.parse import quote_plus as urlencode
 import json
 import requests
-import time
 
-class Characters:
-    def Gatekeeper(expression):
-        if expression=='dark':
-            return '&char=gatekeeper.dark'
-        else:
-            return '&char=gatekeeper'
-    def Keymaster(expression):
-        if expression=='huh':
-            return '&char=keymaster.huh'
-        elif expression=='scared':
-            return '&char=keymaster.scared'
-        elif expression=='scream':
-            return '&char=keymaster.scream'
-        else:
-            return '&char=keymaster' 
-    def Monster(expression):
-        if expression=='eyes':
-            return '&char=monster.eyes'
-        else:
-            return '&char=monster'
-    def Potbor(expression):
-        if expression=='annoyed':
-            return '&char=potbor.'+str(expression)
-        elif expression=='huh':
-            return '&char=potbor.'+str(expression)
-        elif expression=='mad':
-            return '&char=potbor.'+str(expression)
-        elif expression=='right':
-            return '&char=potbor.'+str(expression)
-        elif expression=='talk':
-            return '&char=potbor.'+str(expression)
-        elif expression=='tired':
-            return '&char=potbor.'+str(expression)
-        else:
-            return '&char=potbor'
-    def Scratch(expression):
-        if expression=='annoyed':
-            return '&char=scratch.'+str(expression)
-        elif expression=='huh':
-            return '&char=scratch.'+str(expression)
-        elif expression=='mad':
-            return '&char=scratch.'+str(expression)
-        elif expression=='right':
-            return '&char=scratch.'+str(expression)
-        elif expression=='talk':
-            return '&char=scratch.'+str(expression)
-        elif expression=='tired':
-            return '&char=scratch.'+str(expression)
-        else:
-            return '&char=scratch'
-    def Shopkeeper(expression):
-        if expression=='annoyed':
-            return '&char=shopkeeper.annoyed'
-        else:
-            return '&char=shopkeeper'
-    def Spooky():
-        return '&char=spooky'
-    def Custom(link):
-        return '&url='+str(link)+'&resize=1'
+# ATTRIBUTES
+from characters import Characters
+from comments import Comments
+from leaderboard import Leaderboard
 
 def daily():
     data = json.loads(fetchapi('https://gdbrowser.com/api/level/daily').read())
@@ -112,12 +58,12 @@ def weekly():
     return total
 
 def fetchProfile(inputs):
-    data = json.loads(fetchapi('https://gdbrowser.com/api/profile/'+str(inputs)).read())
+    data = json.loads(fetchapi('https://gdbrowser.com/api/profile/'+str(urlencode(inputs).replace('+', '%20'))).read())
     try:
         temp = data.keys()
     except AttributeError:
         raise ConnectionRefusedError('User not found!')
-    total = GDClass(total)
+    total = GDClass(data)
     return total
 
 def fetchLevel(levelid):
@@ -133,45 +79,9 @@ def fetchLevel(levelid):
     except AttributeError:
         raise ConnectionRefusedError('Level not found!')
 
-class Comments:
-    def getFromLevel(levelid):
-        if str(levelid).isnumeric()==False:
-            raise ValueError('Parameters must be Level ID. (In an integer form)')
-        try:
-            data = json.loads(fetchapi('https://gdbrowser.com/api/comments/'+str(levelid)+'?top').read())
-            total = []
-            for a in range(0, len(data)):
-                total.append(GDClass(data[a]))
-            return total
-        except:
-            raise ConnectionRefusedError('Invalid Level ID.')
-    
-    def getFromUser(userid):
-        if str(userid).isnumeric()==False:
-            raise ValueError('Parameters (user ID) must be integer value.')
-        try:
-            data = json.loads(fetchapi('https://gdbrowser.com/api/comments/'+str(userid)+'?type=commentHistory').read())
-            total = []
-            for a in range(0, len(data)):
-                total.append(GDClass(data[a]))
-            return total
-        except:
-            raise ConnectionRefusedError('Invalid User ID.')
-    
-    def getProfilePosts(userid):
-        if str(userid).isnumeric()==False:
-            raise ValueError('Parameters (user ID) must be integer value.')
-        try:
-            data = json.loads(fetchapi('https://gdbrowser.com/api/comments/'+str(userid)+'?type=profile').read())
-            total = []
-            for a in range(0, len(data)):
-                total.append(GDClass(data[a]))
-            return total
-        except:
-            raise ConnectionRefusedError('Invalid User ID.')
-
 def levelSearch(query):
-    data = json.loads(fetchapi('https://gdbrowser.com/api/search/'+str(query).replace(' ', '%20')).read())
+    encoded_query = urlencode(query).replace(" ", "%20")
+    data = json.loads(fetchapi('https://gdbrowser.com/api/search/'+str(encoded_query)).read())
     try:
         total = []
         for a in range(0, len(data)):
@@ -180,62 +90,32 @@ def levelSearch(query):
         raise ConnectionRefusedError('Level not found')
     return total
 
-class Leaderboard:
-    def topPlayers(count):
-        if count>5000:
-            raise OverflowError('Too many!')
-        else:
-            data = json.loads(fetchapi('https://gdbrowser.com/api/leaderboard?count='+str(count)).read())
-            try:
-                total = []
-                for a in range(0, len(data)):
-                    total.append(GDClass(data[a]))
-            except:
-                raise ConnectionRefusedError('Invalid Query')
-            return total
-    def topCreators(count):
-        if count>5000:
-            raise OverflowError('Too many!')
-        else:
-            data = json.loads(fetchapi('https://gdbrowser.com/api/leaderboard?creator&count='+str(count)).read())
-            try:
-                total = []
-                for a in range(0, len(data)):
-                    total.append(GDClass(data[a]))
-            except:
-                raise ConnectionRefusedError('Invalid Query')
-            return total
-def analyze(levelid):
-    if str(levelid).isnumeric()==False:
-        raise ValueError('Requires level ID, not level name')
-    else:
-        data = json.loads(fetchapi('https://gdbrowser.com/api/analyze/'+str(levelid)).read())
-        total = GDClass(data)
-        return total
-
 def icon(name, *args, **kwargs):
+    name = urlencode(name).replace(' ', '%20')
+    forms = ["cube", 'ship', "ball", "ufo", "wave", "robot", "spider", "cursed"]
     form = '&form='+str(kwargs.get('form', None))
     size = '&size='+str(kwargs.get('size', None))
-    if size==None:
+    if str(kwargs.get('size', None))=='None':
         size = ''
     else:
-        if str(size).isnumeric()==False:
-            raise ValueError('Size must be a number')
-    if form==None:
-        form = ''
+        size = '&size='+str(kwargs.get('size', None))
+        if str(size).isnumeric()==False: raise ValueError('Size must be a number')
+    if str(kwargs.get('form', None))!='None':
+        if str(kwargs.get('form', None)) not in forms:
+            raise ValueError("Invalid Form input")
+    else: form = ''
     return 'https://gdbrowser.com/icon/'+str(name)+str(form)+str(size)
-    
 
 def logo(text):
-    return 'https://gdcolon.com/tools/gdlogo/img/'+str(text).replace(' ', '%20')
+    return 'https://gdcolon.com/tools/gdlogo/img/'+str(urlencode(text)).replace('+', '%20')
+
 def text(text ,font, *args, **kwargs):
     hexcol = '&color='+str(kwargs.get('color', None))
-    if hexcol==None:
-        hexcol = ''
-    return 'https://gdcolon.com/tools/gdfont/img/'+str(text).replace(' ', '%20')+'?font='+str(font)+str(hexcol)
+    if str(kwargs.get('color', None))=='None': hexcol = ''
+    return 'https://gdcolon.com/tools/gdfont/img/'+str(urlencode(text)).replace('+', '%20')+'?font='+str(font)+str(hexcol)
 def comment(text, author, *args, **kwargs):
-    text = str(text).replace(' ', '%20')
-    author = str(author).replace(' ', '%20')
+    text = str(urlencode(text)).replace('+', '%20')
+    author = str(urlencode(author)).replace('+', '%20')
     likes = '&likes='+str(kwargs.get('likes', None))
     color = '&color='+str(kwargs.get('color', None))
     if kwargs.get('likes', None)==None:
@@ -253,8 +133,8 @@ def comment(text, author, *args, **kwargs):
         deletable = '&deletable'
     return 'https://gdcolon.com/tools/gdcomment/img/'+str(text)+'?name='+str(author)+str(likes)+str(color)+str(mod)+str(uhd)+str(deletable)
 def textbox(text, name, color, char, *args, **kwargs):
-    text = str(text).replace(' ', '%20')
-    name = str(name).replace(' ', '%20')
+    text = str(urlencode(text)).replace('+', '%20')
+    name = str(urlencode(name)).replace('+', '%20')
     color = '&color='+str(kwargs.get('color', None))
     mobile = ''
     if kwargs.get('mobile', None)==True:
