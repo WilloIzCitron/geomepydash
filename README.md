@@ -7,9 +7,9 @@ Links to the original website:
 
 \>\>\> [Geometry Dash Tools](https://gdcolon.com/tools) 
 
-**VERSION: 0.3.7**
+**VERSION: 0.3.8**
 
-**LAST UPDATE TIME: "2020-06-23 22:21:54 (UTC+7)"**
+**LAST UPDATE TIME: "2020-07-03 14:40:50 (UTC+7)"**
 
 # setup
 To install the package, type the following on your console.

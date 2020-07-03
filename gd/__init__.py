@@ -10,7 +10,7 @@ __title__ = 'gd'
 __author__ = 'vierofernando'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2020 vierofernando'
-__version__ = '0.3.7'
+__version__ = '0.3.8'
 
 def classify(obj):
     total = 'class Level:\n\t'
@@ -29,10 +29,13 @@ def GDClass(obj):
 # EXTERNAL MODULES
 from urllib.request import urlopen as fetchapi
 from urllib.parse import quote_plus as urlencode
+from sys import path
+from os import getcwd
 import json
 import requests
 
 # ATTRIBUTES
+path.append(getcwd())
 from characters import Characters
 from comments import Comments
 from leaderboard import Leaderboard
